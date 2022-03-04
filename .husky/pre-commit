@@ -1,6 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# npm test && npm run lint --fix && git add . // Test First
-npm run lint --fix && git add .
+npm run pre-commit
 
