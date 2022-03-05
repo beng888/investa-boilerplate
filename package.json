@@ -10,7 +10,7 @@
     "test": "jest",
     "test:ci": "jest --ci",
     "prepare": "husky install",
-    "pre-commit": "npm run lint"
+    "pre-commit": "npm run lint --fix"
   },
   "dependencies": {
     "@emotion/react": "^11.8.1",
@@ -33,7 +33,6 @@
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.3",
     "eslint-plugin-react-hooks": "^4.3.0",
@@ -41,6 +40,13 @@
     "husky": "^7.0.4",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
+    "lint-staged": "^12.3.5",
     "prettier": "^2.5.1"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --cache --fix",
+      "prettier --write"
+    ]
   }
 }

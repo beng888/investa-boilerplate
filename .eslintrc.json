@@ -3,12 +3,21 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["next","next/core-web-vitals","plugin:react/recommended", "airbnb", "airbnb/hooks", "plugin:@next/next/recommended", "prettier"],
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:@next/next/recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:prettier/recommended"
+    // "next/core-web-vitals",
+    // "next"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 12,    "sourceType": "module"
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
   "plugins": ["react", "prettier", "testing-library"],
   "overrides": [
@@ -19,6 +28,7 @@
     }
   ],
   "rules": {
+    "prettier/prettier": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-one-expression-per-line": "off",
     "react/jsx-props-no-spreading": "off",
