@@ -1,4 +1,7 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npm
+differenceCode=git diff HEAD^ HEAD --exit-code -- ./package.json
+
+
+git diff HEAD^ HEAD --exit-code -- ./package.json || npm install
