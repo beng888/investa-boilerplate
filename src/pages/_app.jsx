@@ -1,39 +1,38 @@
+import * as React from 'react';
 import PropTypes from 'prop-types';
-// import { CacheProvider } from '@emotion/react';
-import { ThemeProvider, CssBaseline } from '@mui/material';
+import Head from 'next/head';
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { CacheProvider } from '@emotion/react';
+import theme from 'src/styles/theme';
+import createEmotionCache from '@common/utility/createEmotionCache';
 import Layout from '@common/components/layout';
-// import createEmotionCache from '@common/utility/createEmotionCache';
-import lightTheme from '../styles/theme/lightTheme';
-import '../styles/globals.css';
 
-// const clientSideEmotionCache = createEmotionCache();
+// Client-side cache shared for the whole session
+// of the user in the browser.
 
-function MyApp(props) {
-  const {
-    Component,
-    // emotionCache = clientSideEmotionCache,
-    pageProps,
-  } = props;
+const clientSideEmotionCache = createEmotionCache();
+
+export default function MyApp(props) {
+  const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
 
   return (
-    // <CacheProvider value={emotionCache}>
-    <Layout>
-      <ThemeProvider theme={lightTheme}>
+    <CacheProvider value={emotionCache}>
+      <Head>
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
+      </Head>
+      <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
-    </Layout>
-    // </CacheProvider>
+    </CacheProvider>
   );
 }
 
-export default MyApp;
-MyApp.defaultProps = {
-  emotionCache: {},
-};
-
 MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,
-  emotionCache: PropTypes.instanceOf(Object),
+  emotionCache: PropTypes.instanceOf(Object).isRequired,
   pageProps: PropTypes.instanceOf(Object).isRequired,
 };

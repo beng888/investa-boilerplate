@@ -1,14 +1,14 @@
 import { Box } from '@mui/material';
 import PropTypes from 'prop-types'; // ES6
+import Header from '../header';
+import Progress from '../progress';
 
 function Layout({ children }) {
   return (
-    <Box
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      height="100vh"
-    >
+    <Box height="200vh" bgcolor="gray">
+      {/* <Box display="flex" justifyContent="center" alignItems="center" height="200vh" bgcolor="gray"> */}
+      <Header />
+      <Progress />
       {children}
     </Box>
   );
@@ -17,8 +17,5 @@ function Layout({ children }) {
 export default Layout;
 
 Layout.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]).isRequired,
+  children: PropTypes.node.isRequired,
 };
