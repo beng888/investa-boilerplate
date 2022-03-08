@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@pages/*": ["src/pages/*"],
-      "@common/*": ["src/common/*"]
+      "@common/*": ["src/common/*"],
+      "@components/*": ["src/common/components/*"]
     }
   },
   "include": ["src/**/*", "public/**/*", "next-env.d.js", "**/*.js", "**/*.jsx"],

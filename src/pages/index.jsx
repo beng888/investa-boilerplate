@@ -1,3 +1,5 @@
+import StepperLayout from '@common/layouts/StepperLayout';
+
 export default function Home() {
-  return <div />;
+  return <StepperLayout>asd</StepperLayout>;
 }
