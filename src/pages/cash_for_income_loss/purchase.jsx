@@ -1,22 +1,22 @@
-import StepperLayout from '@common/layouts/StepperLayout';
+import { fetchUser } from '@store/user/user.slice';
 import { wrapper } from 'src/store';
-import { setUserData } from 'src/store/user/user.slice';
+import Purchase from 'src/templates/CashForIncomeLoss/purchase.cfil';
+// import {  useDispatch } from 'react-redux'
 
 export const getServerSideProps = wrapper.getServerSideProps((store) => async ({ query }) => {
   // console.log('store state on the server before dispatch', store.getState());
-  store.dispatch(setUserData('lawrence'));
+
+  store.dispatch(fetchUser(query.userId));
+
   // console.log('store state on the server after dispatch', store.getState());
 
-  const data = query.data || 'default data';
   //  http://localhost:3000?data='some-data'
 
   return {
-    props: {
-      data,
-    }, // will be passed to the page component as props
+    props: {}, // will be passed to the page component as props
   };
 });
 
-export default function Home() {
-  return <StepperLayout>asd</StepperLayout>;
+export default function PurchaseCFIL() {
+  return <Purchase />;
 }

@@ -5,15 +5,16 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { CacheProvider } from '@emotion/react';
 import Theme from 'src/styles/theme';
 import createEmotionCache from 'src/helpers/createEmotionCache';
-import Layout from '@common/layouts/MainLayout';
+import MainLayout from '@common/layouts/MainLayout';
 import '../styles/globals.css';
 import { useState } from 'react';
 import setGlobalStyles from 'src/styles/setGlobalStyles';
+import { wrapper } from 'src/store';
 
 //* Client-side cache shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
 
-export default function MyApp(props) {
+function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const [theme] = useState(Theme);
 
@@ -25,9 +26,9 @@ export default function MyApp(props) {
       <ThemeProvider theme={theme}>
         {setGlobalStyles(theme)}
         <CssBaseline />
-        <Layout>
+        <MainLayout>
           <Component {...pageProps} />
-        </Layout>
+        </MainLayout>
       </ThemeProvider>
     </CacheProvider>
   );
@@ -39,3 +40,5 @@ MyApp.propTypes = {
   emotionCache: PropTypes.instanceOf(Object),
   pageProps: PropTypes.instanceOf(Object).isRequired,
 };
+
+export default wrapper.withRedux(MyApp);

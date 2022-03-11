@@ -2,8 +2,18 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@config/*": ["src/config/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@templates/*": ["src/templates/*"],
+      "@store/*": ["src/store/*"],
       "@common/*": ["src/common/*"],
-      "@components/*": ["src/common/components/*"]
+      "@components/*": ["src/common/components/*"],
+      "@constants/*": ["src/common/constants/*"],
+      "@layouts/*": ["src/common/layouts/*"],
+      "@modules/*": ["src/common/modules/*"],
+      "@utilities/*": ["src/common/utilities/*"],
+      "@cards/*": ["src/common/components/cards/*"],
+      "@buttons/*": ["src/common/components/buttons*"]
     }
   },
   "include": ["src/**/*", "public/**/*", "next-env.d.js", "**/*.js", "**/*.jsx"],

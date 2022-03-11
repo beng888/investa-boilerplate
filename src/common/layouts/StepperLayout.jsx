@@ -1,5 +1,4 @@
 import { Box, LinearProgress, Stack, Typography } from '@mui/material';
-import React from 'react';
 import { NextButton } from '@common/components/buttons';
 import PropTypes from 'prop-types'; // ES6
 
