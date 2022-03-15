@@ -1,4 +1,7 @@
+// import { createTheme } from '@mui/material';
 import _var from '../variables.module.css';
+
+// const theme = createTheme();
 
 const typography = {
   fontFamily: ['SharpSansNo1', 'sans-serif'].join(','),
@@ -10,6 +13,14 @@ const typography = {
     fontSize: '32px',
     lineHeight: '42px',
     color: _var['--N999'],
+    '@media (max-width:600px)': {
+      fontSize: '21.88px',
+      lineHeight: '26px',
+    },
+    //* sample using theme breakpoints
+    // [theme.breakpoints.up('md')]: {
+    //   fontSize: '2.4rem',
+    // },
   },
   'Title Name': {
     fontWeight: 500,

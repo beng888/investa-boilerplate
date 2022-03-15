@@ -6,9 +6,10 @@ const style = {
   width: '100%',
   maxWidth: 384,
   fontWeight: 400,
+  color: 'var(--N900)',
 };
 
-export default function NextButton({ onClick, children, variant, ...props }) {
+export default function NoButton({ onClick, children, variant, ...props }) {
   return (
     <Button onClick={onClick} variant={variant} sx={{ ...style, ...props }}>
       {children}
@@ -16,11 +17,11 @@ export default function NextButton({ onClick, children, variant, ...props }) {
   );
 }
 
-NextButton.defaultProps = {
-  variant: 'contained',
+NoButton.defaultProps = {
+  variant: null,
 };
 
-NextButton.propTypes = {
+NoButton.propTypes = {
   onClick: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
   variant: PropTypes.string,

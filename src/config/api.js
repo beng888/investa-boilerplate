@@ -8,8 +8,11 @@ import axios from 'axios';
 //* Custom instance
 const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_BASE_URL,
-  headers: { 'app-id': process.env.NEXT_PUBLIC_DUMMY_API_APP_ID },
-  withCredentials: true,
+  headers: {
+    'app-id': process.env.NEXT_PUBLIC_DUMMY_API_APP_ID,
+    'Access-Control-Allow-Origin': 'http://localhost:3000',
+  },
+  withCredentials: !process.browser,
   credentials: 'include',
 });
 

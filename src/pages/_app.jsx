@@ -10,6 +10,8 @@ import '../styles/globals.css';
 import { useState } from 'react';
 import setGlobalStyles from 'src/styles/setGlobalStyles';
 import { wrapper } from 'src/store';
+// import { useDispatch, useSelector } from 'react-redux';
+// import { fetchUser, selectUser } from '@store/user/user.slice';
 
 //* Client-side cache shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -17,6 +19,20 @@ const clientSideEmotionCache = createEmotionCache();
 function MyApp(props) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   const [theme] = useState(Theme);
+
+  // const user = useSelector(selectUser);
+  // console.log('%c⧭', 'color: red', user);
+
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     await dispatch(fetchUser('60d0fe4f5311236168a109ca'));
+  //   };
+
+  //   fetchData()
+  //     // make sure to catch any error
+  //     .catch(console.error);
+  // }, [dispatch]);
 
   return (
     <CacheProvider value={emotionCache}>
@@ -27,7 +43,13 @@ function MyApp(props) {
         {setGlobalStyles(theme)}
         <CssBaseline />
         <MainLayout>
-          <Component {...pageProps} />
+          {Component.PageLayout ? (
+            <Component.PageLayout>
+              <Component {...pageProps} />
+            </Component.PageLayout>
+          ) : (
+            <Component {...pageProps} />
+          )}
         </MainLayout>
       </ThemeProvider>
     </CacheProvider>

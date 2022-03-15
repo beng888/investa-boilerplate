@@ -22,6 +22,30 @@ const theme = createTheme({
       defaultProps: {
         disableRipple: true,
       },
+      variants: [
+        {
+          props: { variant: 'outlined' },
+          style: {
+            border: `1px solid ${_var['--N999']}`,
+            color: _var['--N999'],
+          },
+        },
+      ],
+    },
+    MuiToggleButton: {
+      defaultProps: {
+        disableRipple: true,
+      },
+    },
+    MuiDialogActions: {
+      styleOverrides: {
+        root: { padding: '0px' },
+      },
+    },
+    MuiDialogTitle: {
+      styleOverrides: {
+        root: { padding: '0px' },
+      },
     },
   },
 });
