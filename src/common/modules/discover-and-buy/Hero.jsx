@@ -32,7 +32,12 @@ export default function Hero() {
           sx={{ minWidth: '385px', minHeight: '393px', position: 'relative' }}
           display={['none', null, 'unset']}
         >
-          <Image src="/images/cash-for-income-loss-hero.svg" layout="fill" objectFit="contain" />
+          <Image
+            src="/images/cash-for-income-loss-hero.svg"
+            layout="fill"
+            objectFit="contain"
+            priority
+          />
         </Box>
       </Box>
       <Stack
@@ -49,20 +54,22 @@ export default function Hero() {
         <Typography variant="a.reg">learn more</Typography>
         <ExpandMoreIcon fontSize="large" sx={{ color: 'var(--SL-R700)' }} />
       </Stack>
-      <Box
-        sx={{
-          minWidth: { xs: '100vw', md: '385px' },
-          minHeight: { md: '393px' },
-          maxHeight: '450px',
-          height: '150vw',
-          position: 'absolute',
-          display: { md: 'none' },
-          transform: 'translate(1%,-77% )',
-          right: 0,
-          zIndex: '-1',
-        }}
-      >
-        <Image src="/images/cash-for-income-loss-hero.svg" layout="fill" objectFit="contain" />
+      <Box position="absolute">
+        <Box
+          sx={{
+            minWidth: { xs: '100vw', md: '385px' },
+            minHeight: { md: '393px' },
+            maxHeight: '450px',
+            height: '100vw',
+            position: 'relative',
+            display: { md: 'none' },
+            transform: 'translate(-20px,-77% )',
+            right: 0,
+            zIndex: '-1',
+          }}
+        >
+          <Image src="/images/cash-for-income-loss-hero.svg" layout="fill" objectFit="contain" />
+        </Box>
       </Box>
     </Box>
   );

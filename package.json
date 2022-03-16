@@ -21,12 +21,14 @@
     "@mui/material": "^5.5.0",
     "@reduxjs/toolkit": "^1.8.0",
     "axios": "^0.26.1",
+    "gsap": "file:gsap-bonus.tgz",
     "next": "12.1.0",
     "next-redux-wrapper": "^7.0.5",
     "prop-types": "^15.8.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "react-redux": "^7.2.6"
+    "react-redux": "^7.2.6",
+    "trustpilot": "^3.3.0"
   },
   "devDependencies": {
     "@emotion/eslint-plugin": "^11.7.0",

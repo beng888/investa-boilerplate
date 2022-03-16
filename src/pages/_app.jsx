@@ -10,6 +10,7 @@ import '../styles/globals.css';
 import { useState } from 'react';
 import setGlobalStyles from 'src/styles/setGlobalStyles';
 import { wrapper } from 'src/store';
+import Script from 'next/script';
 // import { useDispatch, useSelector } from 'react-redux';
 // import { fetchUser, selectUser } from '@store/user/user.slice';
 
@@ -39,6 +40,13 @@ function MyApp(props) {
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
+      <Script id="trustpilot-script">
+        <script
+          type="text/javascript"
+          src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+          async
+        />
+      </Script>
       <ThemeProvider theme={theme}>
         {setGlobalStyles(theme)}
         <CssBaseline />

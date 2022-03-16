@@ -13,7 +13,7 @@ const typography = {
     fontSize: '34.18px',
     lineHeight: '42.72px',
     color: _var['--N999'],
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
       fontSize: '42px',
       lineHeight: '60px',
     },
@@ -28,7 +28,7 @@ const typography = {
     //   fontSize: '21.88px',
     //   lineHeight: '26px',
     // },
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
       fontSize: '32px',
       lineHeight: '42px',
     },
@@ -76,7 +76,7 @@ const typography = {
     lineHeight: '18px',
     color: _var['--N700'],
     textTransform: 'uppercase',
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
       fontSize: '20px',
       lineHeight: '24px',
     },
@@ -86,7 +86,7 @@ const typography = {
     fontSize: '11.2px',
     lineHeight: '18px',
     color: _var['--N700'],
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
       fontSize: '18px',
       lineHeight: '22px',
     },
@@ -97,7 +97,7 @@ const typography = {
     lineHeight: '13px',
     color: _var['--SL-R700'],
     textTransform: 'uppercase',
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
       fontSize: '18px',
       lineHeight: '22px',
     },
@@ -107,7 +107,7 @@ const typography = {
     fontSize: '27.34px',
     lineHeight: '34px',
     color: _var['--N999'],
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
       fontSize: '48px',
       lineHeight: '60px',
     },
@@ -117,7 +117,7 @@ const typography = {
     fontSize: '14px',
     lineHeight: '18px',
     color: _var['--N900'],
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
       fontSize: '20px',
       lineHeight: '24px',
     },
@@ -128,7 +128,7 @@ const typography = {
     lineHeight: '26px',
     color: _var['--N999'],
     textTransform: 'uppercase',
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
       fontSize: '24px',
       lineHeight: '30px',
     },
@@ -138,7 +138,7 @@ const typography = {
     fontSize: '17.5px',
     lineHeight: '24px',
     color: _var['--N999'],
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
       fontSize: '20px',
       lineHeight: '24px',
     },

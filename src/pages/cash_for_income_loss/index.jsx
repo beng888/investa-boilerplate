@@ -1,7 +1,12 @@
 import Head from 'next/head';
-import { Hero } from '@common/modules/discover-and-buy';
-import Coverage from '@common/modules/discover-and-buy/Coverage';
-import MoreReasonsToBuy from '@common/modules/discover-and-buy/MoreReasonsToBuy';
+import {
+  Coverage,
+  Hero,
+  HowItWorks,
+  MoreReasonsToBuy,
+  TrustBox,
+} from '@common/modules/discover-and-buy';
+import { Box } from '@mui/material';
 
 // import { wrapper } from 'src/store';
 // import { fetchUser, selectUser } from '@store/user.slice';
@@ -26,7 +31,10 @@ export default function CashForIncomeLoss() {
 
       <Hero />
       <Coverage />
+      <HowItWorks />
       <MoreReasonsToBuy />
+      <TrustBox />
+      <Box height="100vh" />
     </>
   );
 }

@@ -1,7 +1,6 @@
 import { AppBar, Box, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 // import { useDispatch } from 'react-redux';
 // import { useEffect } from 'react';
@@ -41,12 +40,13 @@ export default function Header() {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Box height={['29.46px', '48px']} width={['216px', '355px']} position="relative">
-          <Link href="/">
-            <a>
-              <Image src="/images/singlife-investa.svg" layout="fill" />
-            </a>
-          </Link>
+        <Box
+          onClick={() => router.push('/')}
+          height={['29.46px', '48px']}
+          width={['216px', '355px']}
+          position="relative"
+        >
+          <Image src="/images/singlife-investa.svg" layout="fill" />
         </Box>
         <Typography display={{ xs: 'none', sm: 'unset' }} variant="You're now covered w">
           Cash for Income Loss
