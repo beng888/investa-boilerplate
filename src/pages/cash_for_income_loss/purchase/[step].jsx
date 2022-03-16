@@ -23,15 +23,29 @@ const steps = {
   success: <Success />,
 };
 
+const stepsKeys = Object.keys(steps);
+
+export async function getServerSideProps({ query }) {
+  if (!stepsKeys.includes(query.step)) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {},
+  };
+}
+
 export default function Purchase() {
   const { query } = useRouter();
   const { setSteps } = useStepperContext();
 
   useEffect(() => {
-    setSteps(Object.keys(steps));
+    setSteps(stepsKeys);
   }, [setSteps]);
 
-  return steps[query.step] || <YourProfile />;
+  return steps[query.step];
 }
 
 Purchase.PageLayout = StepperLayout;

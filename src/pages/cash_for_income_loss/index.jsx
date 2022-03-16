@@ -1,6 +1,7 @@
 import Head from 'next/head';
-import Link from 'next/link';
-import { Stack } from '@mui/material';
+import { Hero } from '@common/modules/discover-and-buy';
+import Coverage from '@common/modules/discover-and-buy/Coverage';
+import MoreReasonsToBuy from '@common/modules/discover-and-buy/MoreReasonsToBuy';
 
 // import { wrapper } from 'src/store';
 // import { fetchUser, selectUser } from '@store/user.slice';
@@ -23,12 +24,9 @@ export default function CashForIncomeLoss() {
         <title>Cash For Income Loss</title>
       </Head>
 
-      <Stack component="h1" textAlign="center">
-        CashForIncomeLoss
-        <Link href={{ pathname: '/cash_for_income_loss/purchase/your_profile' }}>
-          <a style={{ color: 'blue', marginTop: 20 }}>PURCHASE</a>
-        </Link>
-      </Stack>
+      <Hero />
+      <Coverage />
+      <MoreReasonsToBuy />
     </>
   );
 }
