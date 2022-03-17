@@ -2,12 +2,9 @@ import { NextButton } from '@common/components/buttons';
 import { Box, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import gsap from 'gsap';
-import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
+import { scrollTo } from '@common/utilities/gsap';
 
 export default function Hero() {
-  gsap.registerPlugin(ScrollToPlugin);
-
   return (
     <Box pt={{ xs: '24px', md: '64px' }} px="24px" position="relative">
       <Box display="flex" maxWidth={1200} gap="24px" mx="auto">
@@ -54,7 +51,7 @@ export default function Hero() {
         }}
         mb={{ xs: '71px', md: '40px' }}
         onClick={() => {
-          gsap.to(window, { duration: 0.7, scrollTo: { y: `#coverage` } });
+          scrollTo({ to: '#coverage', duration: 0.7 });
         }}
       >
         <Typography variant="a.reg">learn more</Typography>

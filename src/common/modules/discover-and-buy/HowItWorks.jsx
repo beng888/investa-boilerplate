@@ -39,7 +39,7 @@ export default function HowItWorks() {
   };
 
   return (
-    <Box>
+    <Box zIndex={1}>
       <Stack
         ref={containerRef}
         bgcolor="var(--SL-R500)"

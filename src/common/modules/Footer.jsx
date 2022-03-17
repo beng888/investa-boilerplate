@@ -34,11 +34,12 @@ export default function Footer() {
 
         <Grid container mt="32px" columnSpacing="24px" rowSpacing="16px">
           {sections.map((section) => (
-            <Grid item xs={6}>
+            <Grid item xs={12} sm={6}>
               <Box
                 sx={{ p: '16px 24px', display: 'flex', alignItems: 'center', gap: '16px' }}
                 border="1px solid var(--N300)"
                 borderRadius="4px"
+                height="100%"
               >
                 <Image src={section.icon} height={24} width={24} layout="intrinsic" />
                 <Typography flexGrow={1} variant="Label">
