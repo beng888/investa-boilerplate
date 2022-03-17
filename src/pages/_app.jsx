@@ -40,13 +40,11 @@ function MyApp(props) {
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </Head>
-      <Script id="trustpilot-script">
-        <script
-          type="text/javascript"
-          src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
-          async
-        />
-      </Script>
+      <Script
+        id="trustpilot-script"
+        strategy="lazyOnload"
+        src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+      />
       <ThemeProvider theme={theme}>
         {setGlobalStyles(theme)}
         <CssBaseline />

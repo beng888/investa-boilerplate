@@ -5,8 +5,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  scroll-behavior: smooth;
   overflow-x: hidden;
+  /* scroll-behavior: smooth; */
   /* color: var(--SL-R900); */
 }
 

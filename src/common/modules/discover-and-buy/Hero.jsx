@@ -2,8 +2,12 @@ import { NextButton } from '@common/components/buttons';
 import { Box, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import gsap from 'gsap';
+import { ScrollToPlugin } from 'gsap/dist/ScrollToPlugin';
 
 export default function Hero() {
+  gsap.registerPlugin(ScrollToPlugin);
+
   return (
     <Box pt={{ xs: '24px', md: '64px' }} px="24px" position="relative">
       <Box display="flex" maxWidth={1200} gap="24px" mx="auto">
@@ -42,14 +46,16 @@ export default function Hero() {
       </Box>
       <Stack
         sx={{
+          '&:hover': { cursor: 'pointer' },
           width: { xs: 177, md: 'fit-content' },
           mx: { md: 'auto' },
           alignItems: 'center',
           mt: { xs: '16px', md: '40px' },
         }}
         mb={{ xs: '71px', md: '40px' }}
-        component="a"
-        href="#coverage"
+        onClick={() => {
+          gsap.to(window, { duration: 0.7, scrollTo: { y: `#coverage` } });
+        }}
       >
         <Typography variant="a.reg">learn more</Typography>
         <ExpandMoreIcon fontSize="large" sx={{ color: 'var(--SL-R700)' }} />

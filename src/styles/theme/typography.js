@@ -143,6 +143,12 @@ const typography = {
       lineHeight: '24px',
     },
   },
+  Label: {
+    fontWeight: 400,
+    fontSize: '14px',
+    lineHeight: '21px',
+    color: _var['--N999'],
+  },
 };
 
 export default typography;

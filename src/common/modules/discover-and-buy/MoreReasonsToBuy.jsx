@@ -42,26 +42,23 @@ export default function MoreReasonsToBuy() {
           rowSpacing="24px"
           columnSpacing="24px"
         >
-          {sections.map((section) => {
-            const { image, title, description } = section;
-            return (
-              <Grid key={title} display={['flex', null, 'grid']} item xs={12} md={3}>
-                <Box
-                  minHeight={{ xs: 93, md: 124 }}
-                  minWidth={{ xs: 93, md: 124 }}
-                  position="relative"
-                >
-                  <Image src={image} layout="fill" priority />
-                </Box>
-                <Box mt="20px">
-                  <Typography variant="h4">{title}</Typography>
-                  <Typography component="p" mt={['4px', null, '12px']} variant="p">
-                    {description}
-                  </Typography>
-                </Box>
-              </Grid>
-            );
-          })}
+          {sections.map((section) => (
+            <Grid key={section.title} display={['flex', null, 'grid']} item xs={12} md={3}>
+              <Box
+                minHeight={{ xs: 93, md: 124 }}
+                minWidth={{ xs: 93, md: 124 }}
+                position="relative"
+              >
+                <Image src={section.image} layout="fill" priority />
+              </Box>
+              <Box mt="20px">
+                <Typography variant="h4">{section.title}</Typography>
+                <Typography component="p" mt={['4px', null, '12px']} variant="p">
+                  {section.description}
+                </Typography>
+              </Box>
+            </Grid>
+          ))}
         </Grid>
       </Box>
     </Stack>

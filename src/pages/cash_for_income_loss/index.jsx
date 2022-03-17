@@ -4,9 +4,9 @@ import {
   Hero,
   HowItWorks,
   MoreReasonsToBuy,
-  TrustBox,
+  Reviews,
 } from '@common/modules/discover-and-buy';
-import { Box } from '@mui/material';
+import { Footer } from '@common/modules';
 
 // import { wrapper } from 'src/store';
 // import { fetchUser, selectUser } from '@store/user.slice';
@@ -33,8 +33,8 @@ export default function CashForIncomeLoss() {
       <Coverage />
       <HowItWorks />
       <MoreReasonsToBuy />
-      <TrustBox />
-      <Box height="100vh" />
+      <Reviews />
+      <Footer />
     </>
   );
 }
